@@ -1,2 +1,2 @@
 # SparkScalaCourse
-Code from Frank Kane's Udemy course
+Solutions to Frank Kane's Udemy course
