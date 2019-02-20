@@ -43,11 +43,11 @@ object WordCountFiltered {
     val results = sortedCount.collect()
     
     // Print the results
-   for(result <- results) {
-     val count = result._1
-     val word = result._2
+    for(result <- results) {
+      val count = result._1
+      val word = result._2
       
-     println(s"$word: $count")
+      println(s"$word: $count")
     }
   }
   
