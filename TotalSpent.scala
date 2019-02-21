@@ -9,7 +9,7 @@ import org.apache.log4j._
  */
 object TotalSpent {
   
-  def parseLine(line: String) = {
+  def extractCustomerAmountPairs(line: String) = {
     val fields = line.split(",")
     val customerId = fields(0).toInt
     val dollarAmount = fields(2).toFloat
@@ -30,7 +30,7 @@ object TotalSpent {
     // Split the lines into separate fields (customerId, dollarAmount)
     // Map each line to key-value pairs of customerId and dollarAmount
     // Use reduceByKey to find amount spent for each customerId
-    val customerAmounts = lines.map(parseLine).reduceByKey( (x,y) => x+y).sortByKey()
+    val customerAmounts = lines.map(extractCustomerAmountPairs).reduceByKey( (x,y) => x+y).sortByKey()
   
     // Collect the results
     val results = customerAmounts.collect()
